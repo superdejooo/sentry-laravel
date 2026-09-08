@@ -125,6 +125,8 @@ jobs:
           # Re-require laravel/ai for supported combinations (PHP 8.4+ and Laravel 12)
           if [ "${{ matrix.packages.laravel }}" == "^12.0" ] && ([ "${{ matrix.php }}" == "8.4" ] || [ "${{ matrix.php }}" == "8.5" ]); then
             composer require "laravel/ai:^0.1.5" --dev --no-interaction --no-update
+          elif [ "${{ matrix.packages.laravel }}" == "^13.0" ]; then
+            composer require "laravel/ai:^0.11.2" --dev --no-interaction --no-update
           fi
 
       - name: Resolve dependencies
